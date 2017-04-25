@@ -5,13 +5,16 @@ class SearchBar extends Component {
   constructor(props) {
     super(props); // if not declared, you will get an error
 
-    this.state = { ter: ''};
+    this.state = { term: ''};
   }
   render() {
-    return <input onChange={(event) => console.log(event.target.value)} />;
+    return (
+      <div>
+        <input onChange={event => this.setState({ term: event.target.value })} />
+        Value of the input: {this.state.term}
+      </div>
+    );
   }
-
 }
-
 
 export default SearchBar;
